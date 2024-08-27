@@ -1,0 +1,14 @@
+# matplotlib==3.8.0
+# 
+seaborn==0.12.2
+# Django==2.2
+plotly
+# Flask
+# requests==1.0.0
+
+urllib3==1.24.1
+
+fastapi==0.101.1
+beautifulsoup4==4.11.2
+
+pillow==10.1.0
