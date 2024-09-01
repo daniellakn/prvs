@@ -9,48 +9,50 @@ Use the `-p`/`--path` switch to set the location and name of the requirements fi
 ## Example Usage
 
 ```
-$ python3 src/prvs.py -p test/requirements.txt 
+$ python3 src/prvs.py -p test/requirements.txt                          
 
 Package found: beautifulsoup4==4.11.2
-No known vulnerabilities
+No known vulnerabilities.
 >>> You are using an outdated version. Latest is 4.12.3.
 
 
 Package found: pillow==10.1.0
 This package has 3 vulnerabilities.
 >>> You are using an outdated version. Latest is 10.4.0.
->>> Consider upgrading to version 10.3.0 to resolve all known vulnerabilities.
+>>> Consider upgrading to version 10.3.0 to resolve all found vulnerabilities.
 
->>> 3 vulnerabilties found across 2 vulnerable packages.
+
+>>> 3 vulnerabilties found across 1 vulnerable packages.
 ```
 
 ```
-$ python3 src/prvs.py -p test/requirements.txt -v
+$ python3 src/prvs.py -p test/requirements.txt -v             
 
 Package found: beautifulsoup4==4.11.2
-No known vulnerabilities
+No known vulnerabilities.
 >>> You are using an outdated version. Latest is 4.12.3.
 
 
 Package found: pillow==10.1.0
-Vulnerabilties:
         Vulnerability ID: CVE-2024-28219
+        Severity: Medium
         Summary: Summary cannot be provided.
         Fixed in version: No fix avaiable.
 
-Vulnerabilties:
         Vulnerability ID: BIT-pillow-2023-50447
+        Severity: HIGH
         Summary: Arbitrary Code Execution in Pillow
         Fixed in version: 10.2.0
 
-Vulnerabilties:
         Vulnerability ID: BIT-pillow-2024-28219
+        Severity: MODERATE
         Summary: Pillow buffer overflow vulnerability
         Fixed in version: 10.3.0
 
 This package has 3 vulnerabilities.
 >>> You are using an outdated version. Latest is 10.4.0.
->>> Consider upgrading to version 10.3.0 to resolve all known vulnerabilities.
+>>> Consider upgrading to version 10.3.0 to resolve all found vulnerabilities.
 
->>> 3 vulnerabilties found across 2 vulnerable packages.
+
+>>> 3 vulnerabilties found across 1 vulnerable packages.
 ```
