@@ -1,6 +1,6 @@
 import subprocess
 import argparse
-from colours import print_red, print_yellow, print_bold
+from colours import print_red, print_yellow, print_blue, print_cyan, print_orange, print_bold, print_green
 from osv_api import get_vulns_by_package
 
 # add options here
@@ -33,8 +33,8 @@ def print_results(vs, package, verbose):
 
     if args.verbose: 
         for v in vs:
-            print(f"\nVulnerabilties:")
-            print(f"\tVulnerability ID: {v.get('cve')}")
+            print(f"\n\tVulnerability ID: {v['cve']}")
+            print(f"\tSeverity: {v.get('severity')}")
             print(f"\tSummary: {v.get('summary')}")
             print(f"\tFixed in version: {v['fixed']}")
         if vulnies_count == 1:
@@ -60,7 +60,7 @@ def print_results(vs, package, verbose):
         print_yellow(f"\n>>> You are using an outdated version. Latest is {latest_v}.")
     
     if upgrade_to > "0.0.0.0":
-        print_red(f">>> Consider upgrading to version {upgrade_to} to resolve all known vulnerabilities.\n")
+        print_cyan(f">>> Consider upgrading to version {upgrade_to} to resolve all found vulnerabilities.\n")
         
     return
 
